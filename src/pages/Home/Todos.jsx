@@ -31,7 +31,10 @@ export function Todos() {
               requestReplaceTodo({ ...t, completed: !t.completed })
             }
           >
-            <IonLabel>{t.title}</IonLabel>
+            <IonLabel>
+              {t.title} - {t.details}
+            </IonLabel>
+
             <IonToggle slot="start" checked={t.completed} />
           </IonItem>
         ))}

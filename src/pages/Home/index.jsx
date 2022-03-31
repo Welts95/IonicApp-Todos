@@ -13,7 +13,7 @@ export function Home() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App Prova</IonTitle>
+          <IonTitle>Ionic App Todos</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
