@@ -1,4 +1,10 @@
-import { IonItem, IonLabel, IonList, IonToggle } from "@ionic/react";
+import {
+  IonItem,
+  IonItemSliding,
+  IonLabel,
+  IonList,
+  IonToggle,
+} from "@ionic/react";
 import { useEffect, useState } from "react";
 import { getTodos, updateTodo } from "./todosApi";
 
@@ -24,20 +30,21 @@ export function Todos() {
   return (
     <>
       <IonList>
-        {todos.map((t) => (
-          <IonItem
-            key={t.id}
-            onClick={() =>
-              requestReplaceTodo({ ...t, completed: !t.completed })
-            }
-          >
-            <IonLabel>
-              {t.title} - {t.details}
-            </IonLabel>
-
-            <IonToggle slot="start" checked={t.completed} />
-          </IonItem>
-        ))}
+        <IonItemSliding>
+          {todos.map((t) => (
+            <IonItem
+              key={t.id}
+              onClick={() =>
+                requestReplaceTodo({ ...t, completed: !t.completed })
+              }
+            >
+              <IonLabel className="ion-text-wrap" color="primary">
+                {t.title} - {t.details}
+              </IonLabel>
+              <IonToggle slot="start" checked={t.completed} />
+            </IonItem>
+          ))}
+        </IonItemSliding>
       </IonList>
     </>
   );
