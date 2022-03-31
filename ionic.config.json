@@ -1,0 +1,7 @@
+{
+  "name": "AppProvaIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
